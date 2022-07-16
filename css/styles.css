@@ -1,0 +1,151 @@
+:root {
+    /* Colors */
+    --d-cyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+    --d-blue: hsl(212, 21%, 14%);
+    --g-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+
+    /* Font family */
+    --fraunces: 'Fraunces', serif;
+    --montserrat: 'Montserrat', sans-serif;
+
+    --radius: 3%;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.5rem;
+    font-family: var(--montserrat);
+    background-color: var(--cream);
+}
+
+h1, h2, span {
+    font-family: var(--fraunces);
+}
+h1, span {
+    line-height: 1;
+    font-size: 2.9rem;
+    margin: 0;
+}
+p {
+    line-height: 1.6;
+}
+img {
+    max-width: 100%;
+    /* max-height: 100%; */
+}
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* UTILITIES */
+.opaco {
+    color: var(--g-blue);
+}
+.perfume {
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    font-weight: normal;
+}
+.btn-add {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    background-color: var(--d-cyan);
+    padding: 1.3rem;
+    border-radius: .8rem;
+    color: white;
+    font-weight: bold;
+    transition: all .2s ease;
+}
+.btn-add:hover {
+    background-color: var(--d-blue);
+    cursor: pointer;
+}
+
+
+/* CARD */
+.card {
+    display: flex;
+    max-width: 60rem;
+}
+.hero {
+    background-image: url(../images/image-product-desktop.jpg);
+    height: auto;
+    width: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-left-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
+}
+.description {
+    width: 50%;
+    padding: 2rem 2.9rem;
+    background-color: var(--white);
+    border-top-right-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+
+}
+
+.price {
+    display: -ms-flex;
+    align-items: center;
+    display: flex;
+}
+.price h2 {
+    color: var(--d-cyan);
+    margin-right: 2rem;
+    font-size: 2.6rem;
+}
+.price p {
+    text-decoration: line-through;
+}
+
+@media (max-width: 375px) {
+    body {
+        font-size: 1.35rem;
+        font-family: var(--montserrat);
+        background-color: var(--cream);
+    }
+    h1 {
+        display: inline-block;
+    }
+    .card {
+        max-width: 95%;
+        flex-direction: column;
+        gap: 0px;
+    }
+    .hero {
+        background-image: url(../images/image-product-mobile.jpg);
+        width: 100%;
+        height: 24rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-top-left-radius: var(--radius);
+        border-top-right-radius: var(--radius);
+        border-bottom-left-radius: 0;
+    }
+
+    .description {
+        width: 100%;
+        padding: 1.5rem 2rem;
+        border-bottom-left-radius: var(--radius);
+        border-bottom-right-radius: var(--radius);
+        border-top-right-radius: 0;
+        margin-bottom: 2rem;
+    }
+    .enter {
+        enable: false;
+    }
+}
